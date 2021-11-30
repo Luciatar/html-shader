@@ -38,9 +38,9 @@ function addCss() {
 
 
 
-    SHADED[i].style.cssText = `box-shadow: inset 0 1px 1px 0 hsl(0deg 0% 100% / 10%), var(${ cssVarName }-x) var( ${ cssVarName }-y) var( ${ cssVarName }-b) rgb(50 50 93 / 85%); 
+    SHADED[i].style.cssText = `box-shadow: inset 0 1px 1px 0 hsl(0deg 0% 100% / 10%), var(${ cssVarName }-x) var( ${ cssVarName }-y) var( ${ cssVarName }-b) rgb(50 50 93 / 85%), 0 0 0.1vw  rgb(50 50 93 / 85%); 
       
-    text-shadow:  calc(var( ${ cssVarName }-x)* .2) calc(var( ${ cssVarName }-y)* .2) 2px  rgb(50 50 93 / 85%), 0 0 0.1vw  rgb(50 50 93 / 85%)`;
+    text-shadow:  calc(var( ${ cssVarName }-x)* .3) calc(var( ${ cssVarName }-y)* .3) 2px  rgb(50 50 93 / 85%), 0 0 0.1vw  rgb(50 50 93 / 85%)`;
    
   }
 
@@ -56,13 +56,13 @@ function update() {
     let b = Math.floor(mouse.y - y);
 
     blur = Math.floor(Math.sqrt(a * a + b * b) * 0.1) //distance
-    hOff = map( -a * 0.004,0,20, 0, 5 );
-    vOff = map( -b * 0.004,0,20, 0, 5);
+    hOff = map( -a * 0.004,0,15, 0, 5 );
+    vOff = map( -b * 0.004,0,15, 0, 5);
 
 
     root.style.setProperty(cssVarName + "-x", hOff + "vw");
     root.style.setProperty(cssVarName + "-y", vOff + "vw");
-    root.style.setProperty(cssVarName + "-b", blur*0.01  + "vw");
+    root.style.setProperty(cssVarName + "-b", blur*0.005  + "vw");
   }
 
 }
